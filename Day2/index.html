@@ -7,31 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAV-BAR</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/f2c1b034f7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <div class="container">
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><i class="fa-solid fa-bars"></i></label>
         <div class="masai-logo"> <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="img"></div>
         <div class="options">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">COURSES ></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <h3>Full Time</h3>
-                    <a href="https://www.masaischool.com/courses/full-stack-web-dev-full-time/"> Full Stack Web
-                        Devlopment ></a>
-                    <h3>Part Time</h3>
-                    <a href="https://www.masaischool.com/courses/full-stack-web-dev-part-time/">Full Stack Web
-                        Devlopment ></a>
-                    <a href="https://www.masaischool.com/courses/data-analytics-part-time/">Data Analytics ></a>
-                </div>
-            </div>
+            <ul>
+                <li>
+                    <a href="#">COURSES ></a>
+                    <ul>
+                        <h3>Full Time</h3>
+                        <li><a href="https://www.masaischool.com/courses/full-stack-web-dev-full-time/"> Full Stack Web
+                                Devlopment ></a></li>
+                        <h3>Part Time</h3>
+                        <li><a href="https://www.masaischool.com/courses/full-stack-web-dev-part-time/">Full Stack Web
+                                Devlopment ></a></li>
+                        <li><a href="https://www.masaischool.com/courses/data-analytics-part-time/">Data Analytics ></a>
+                        </li>
+                    </ul>
+                </li>
 
-            <P><a href="https://www.masaischool.com/fees/" class="active">FEES & ISA</a></P>
-            <P><a href="https://www.masaischool.com/faq/#general." class="active">FAQ</a></P>
-            <P><a href="https://www.masaischool.com/about/" class="active">ABOUT US</a></P>
-            <P><a href="https://www.masaischool.com/events/" class="active">EVENTS</a></P>
-            <P><a href="https://www.masaischool.com/hire-masai-grads/" class="active">HIRE FROM US</a></P>
+                <li><a href="https://www.masaischool.com/fees/" class="active">FEES & ISA</a></li>
+                <li><a href="https://www.masaischool.com/faq/#general." class="active">FAQ</a></li>
+                <li><a href="https://www.masaischool.com/about/" class="active">ABOUT US</a></li>
+                <li><a href="https://www.masaischool.com/events/" class="active">EVENTS</a></li>
+                <li><a href="https://www.masaischool.com/hire-masai-grads/" class="active">HIRE FROM US</a></li>
+            </ul>
 
         </div>
         <div id="refer-earn">
@@ -41,27 +47,8 @@
             <P><a href="https://sso.masaischool.com/signin/?returnTo=https://dashboard.masaischool.com/#/"
                     target="_blank">LOGIN</a></P>
         </div>
-        <button id="lightbtn"><i class="fa-solid fa-moon"></i></button>
+
     </div>
 </body>
 
 </html>
-<SCript>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function (event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</SCript>

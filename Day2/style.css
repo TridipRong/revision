@@ -6,10 +6,16 @@
 }
 /* Add a black background color to the top navigation */
 .container {
+  position: fixed;
     background-color: rgb(241, 234, 234);
-    height: 60px;
+    top:0;left:0;right:0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 0px 3%;
+   
     display: flex;
-    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
   }
   a,button{
     color: black ;
@@ -18,14 +24,36 @@
     margin: auto;
     width: 20%;
   }
-  .options{
-    width: 50%;
-    display: flex;
-    flex-direction: row;
- margin: auto;
-    gap: 40px;
-    flex-wrap: nowrap;
-  
+  .options ul{
+    list-style: none;
+  }
+  .options ul li{
+    position: relative;
+    float: left;
+  }
+  .options ul li a{
+    font-size: 15px;
+    padding: 15px;
+    color: #333 ;
+    display: block;
+  }
+  .options ul li a:hover{
+    color: rgb(202, 31, 60);
+  }
+  .options ul li ul{
+    position: absolute;
+    left:0;
+    width:270px;
+    background: #fff;
+    display: none ;
+  }
+  .options ul li ul li{
+   width: 100%;
+   border-top: 1px solid rgba(0,0,0,0.1);
+  }
+  .options ul li:focus-within > ul,
+  .options ul li:hover > ul{
+    display: initial;
   }
   #refer-earn{
     background-color: rgb(111, 179, 179);
@@ -33,21 +61,22 @@
     margin: auto;
    height: 90%;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
    
   }
   #refer-earn>p{
-    padding-top: 13%;
+    padding-top: 5%;
   }
   .login{
     background-color: pink;
     border: 1px solid red;
-    width: 8%;
+    width: 7%;
     margin: auto;
-   height: 90%;
+  height: 90%;
     text-align: center;
-    border-radius: 8px;
-   margin-left: 30px;
+    border-radius: 2px;
+   margin-left: 20px;
+   margin-right: -18px;
    
   }
   .login>p>a{
@@ -56,89 +85,71 @@
   }
   .login>p{
    
-   padding-top: 15%;
+   padding-top: 5%;
   }
+#menu-bar{
+  display: none;
+}
+.container label{
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
 
-
-
-
-  .dropbtn {
-    font-size: 17PX;
-   
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Dropdown button on hover & focus */
-  /* .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  } */
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 270px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    width: 90%;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
-
-
-  @media  (775px <= width){
+  @media  (max-width:775px){
     .container {
-      height: 65px;
-      display: flex;
-      flex-wrap: nowrap;
+     padding: 20px;
     }
-   
+   .container label{
+    display: initial;
+   }
    
     .options{
     
-      gap: 20px;
-      flex-wrap: nowrap;
-    
+      position:absolute;
+      top:100%;left: 0;right:0;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    display: none;
+    }
+    .options ul li{
+      width: 100%;
+    }
+    .options ul li ul{
+      position: relative;
+      width: 100%;
+    }
+    .options ul li ul li{
+    background: #fff;
+    }
+    .options ul li ul li ul{
+      width: 100%;
+      left:0%
+    }
+    #menu-bar:checked~.options{
+      display: initial;
     }
     #refer-earn{
-    
+      width: 20%;
+     margin-right: 2%;
+     height: 90%;
      
-      border-radius: 8px;
+      border-radius: 5px;
      
     }
     #refer-earn>p{
       padding-top: 11%;
     }
     .login{
-      width: 8%;
-      border-radius: 5px;
-     margin-left: 20px;
+      width: 15%;
+      height: 90%;
+    margin-right:2%;
      
     }
    
     .login>p{
      
-     padding-top: 10%;
+     padding-top: 7%;
     }
     
   
