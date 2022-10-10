@@ -128,3 +128,7 @@ window.addEventListener("load",()=>{
         todo.addTodo(text);
     });
 });
+
+$(window).load(function() {
+    $('#loading').hide();
+  });
